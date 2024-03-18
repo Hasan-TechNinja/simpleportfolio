@@ -59,8 +59,11 @@ https://www.tooplate.com/view/2120-ben-resume
                 </ul>
 
                 <div class="mt-lg-0 mt-3 mb-4 mb-lg-0">
+
                   
-                    <a href="#" class="custom-btn btn" download>Download CV </a>
+                  {% for c in cv %}
+                    <a href="{{c.cv_images.url}}" class="custom-btn btn" download="">  Download CV </a>
+                    {% endfor %}
                    
                 </div>
             </div>
@@ -146,48 +149,35 @@ https://www.tooplate.com/view/2120-ben-resume
             <!-- TESTIMONIAL -->
      <section class="testimonials section-padding" id="testimonials">
       <div class="container">
-           <div class="row">
-            
-
+           <div class="row">            
                 <div class="col-12">
                     <h3 class="mb-5 text-center">What People say</h3>
-
-                    {% for x in r %}
-
+                    
                     <div class="owl-carousel owl-theme" id="testimonials-carousel">
                       
-                      
                         <div class="item">
+                          {% for x in r %}
                           
+
                             <div class="testimonials-thumb d-flex">
                               
                                 <div class="testimonials-image">
                                     <img src="{{x.img.url}}" class="img-fluid" alt="testimonials image">
                                 </div>
-
                                 <div class="testimonials-info">
                                     <p>{{x.discription}}</p>
-
                                     <h6 class="mb-0">{{x.name}}</h6>
                                     <span>Art Director</span>
                                 </div>
-                                
+                                {% endfor %}
+
                             </div>
                             
-                        </div>
-                        
-                       
-
-                        
-                        
-
-
-                        
-
-                        
+                            
+                            
+                        </div>                       
                     </div>
                     
-                    {% endfor %}
                 </div>
                 
            </div>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import home,homess,introduction,about,cart,review,cv,number,sent
+from . models import home,homess,introduction,about,cart,review,cv,number,sent,cvimg
 # Register your models here.
 @admin.register(home)
 class homeModelAdmin(admin.ModelAdmin):
@@ -43,3 +43,7 @@ class numberModelAdmin(admin.ModelAdmin):
 
 class sentModelAdmin(admin.ModelAdmin):
     list_display=['id','name','email','subject']
+
+@admin.register(cvimg)
+class cvimgModelAdmin(admin.ModelAdmin):
+    list_display=['id','cv_images']

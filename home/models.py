@@ -58,4 +58,7 @@ class sent(models.Model):
 
     def __str__(self):
         return self.name
+
+class cvimg(models.Model):
+    cv_images=models.ImageField(upload_to='cimg', height_field=None, width_field=None, max_length=None)
     

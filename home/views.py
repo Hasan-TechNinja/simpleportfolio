@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from . models import home,homess,introduction,about,cart,review,cv,number,sent
+from . models import home,homess,introduction,about,cart,review,cv,number,sent,cvimg
 from django.contrib import messages
 
 def iintroduction(request):
@@ -9,6 +9,7 @@ def iintroduction(request):
     ct=cart.objects.all()
     rv=review.objects.all()
     nm=number.objects.all()
+    cvi=cvimg.objects.all()
     if request.method=='POST':
         sen=sent()
         name=request.POST.get('name')
@@ -19,7 +20,7 @@ def iintroduction(request):
         sen.subject=subject
         sen.save()
         messages.success(request,'Successfuly Sent')
-    return render(request,'home/index.html',{'intri':intitr,'abou':ab,'cart':ct,'r':rv,'n':nm})
+    return render(request,'home/index.html',{'intri':intitr,'abou':ab,'cart':ct,'r':rv,'n':nm,'cv':cvi})
 
 def aboutt(request):
     ab=about.objects.all()
@@ -34,9 +35,9 @@ def ra(request):
     ct=cart.objects.all()
     return render(request,'home/index.html',{'cart':ct})
 
-def cve(request):
-    cvt=cv.objects.all()
-    return render(request,'home/index.html',{'cv':cvt})
+'''def cve(request):
+    cvi=cvimg.objects.all()
+    return render(request,'home/index.html',{'cv':cvi})'''
 
 def reviews(request):
     rv=review.objects.all()
