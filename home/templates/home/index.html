@@ -147,37 +147,22 @@ https://www.tooplate.com/view/2120-ben-resume
 
 
             <!-- TESTIMONIAL -->
-     <section class="testimonials section-padding" id="testimonials">
-      <div class="container">
-           <div class="row">            
-                <div class="col-12">
-                    <h3 class="mb-5 text-center">What People say</h3>
-                    
-                    <div class="owl-carousel owl-theme" id="testimonials-carousel">
-                      
-                      <div class="item">
-                        <div class="testimonials-thumb d-flex">
-                          
-                          {% for x in r %}
-                                <div class="testimonials-image">
-                                    <img src="{{x.img.url}}" class="img-fluid" alt="testimonials image">
-                                </div>
-
-                                <div class="testimonials-info">
-                                    <p>{{x.discription}}</p>
-                                    <h6 class="mb-0">{{x.name}}</h6>
-                                    <span>Art Director</span>
-                                </div>
-
-                                {% endfor %}
-                              </div>
-                            </div>                       
-                    </div>
-                    
-                </div>
-                
-           </div>
+  <section class="container" id="">
+      <h1 class='text-center mt-2'>What people say</h1>
+      <div class='row mt-5'>
+        {% for x in r %}
+                                
+        <div class='ml-4 card p-2 col-md-3 d-flex justify-contact-center align-items-center'>
+  
+            <img src="{{x.img.url}}" class='card-img ' alt="testimonials image">
+      
+            <p>{{x.discription}}</p>
+            <h6 class="mb-0">{{x.name}}</h6>
+            <span>Art Director</span>
+        </div>
+        {% endfor %}
       </div>
+
  </section>
 
 

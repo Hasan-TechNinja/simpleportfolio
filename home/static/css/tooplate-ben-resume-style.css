@@ -396,9 +396,15 @@ https://www.tooplate.com/view/2120-ben-resume
   }
 
   .testimonials-image img {
+    width: 100px !important;
     border-radius: var(--border-radius-medium);
   }
+.card-img{
+  border-radius: 50%;
+  width: 120px;
+  height: 130px;
 
+}
   .testimonials-info {
     width: 100%;
   }
